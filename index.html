@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jahniss | Arquitecto Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <h1>Hola, soy Jahniss</h1>
+    <p>Transformo ideas en realidades digitales. Desarrollo, diseño y estrategia.</p>
+  </header>
+
+  <section id="sobre-mi" data-aos="fade-up">
+    <h2>¿Quién soy?</h2>
+    <p>Programador, constructor de proyectos y mente creativa. Ayudo a marcas, artistas y negocios a tener presencia profesional y potente en internet.</p>
+  </section>
+
+  <section id="servicio" data-aos="fade-right" data-aos-duration="800">
+    <h2>Lo que ofrezco</h2>
+    <ul>
+      <li>Landing pages potentes que venden</li>
+      <li>Integración de formularios, pagos y redes</li>
+      <li>Diseño limpio, moderno y responsive</li>
+    </ul>
+  </section>
+
+  <section id="destacado" data-aos="zoom-in" data-aos-delay="100">
+    <h2>Producto/Servicio destacado</h2>
+    <p><strong>“Landing Pro”</strong>: Página optimizada para conversiones con integración de contacto, donaciones y branding personalizado.</p>
+    <a href="https://wa.me/240555360919?text=Hola%20Jahniss%2C%20quiero%20una%20Landing%20Pro%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20detalles." target="_blank" style="text-decoration: none;">
+      <button>Solicitar ahora</button>
+    </a>
+  </section>
+
+  <section id="portafolio" data-aos="fade-up" data-aos-duration="1000">
+    <h2>Mis Proyectos</h2>
+    <p style="text-align: center; margin-bottom: 2rem;">Algunas de las ideas que he transformado en realidades digitales.</p>
+
+    <div class="proyectos-grid">
+      <div class="proyecto-card">
+        <h3>Pastelería Geyje</h3>
+        <img src="assets/img/2.png" alt="Pastelería Geyje">
+        <a href="https://jahniss-m.github.io/pasteleria-geyje/" target="_blank">Ver proyecto</a>
+      </div>
+      <div class="proyecto-card">
+        <h3>BulletPR</h3>
+        <img src="assets/img/1.png" alt="BulletPR">
+        <a href="https://jahniss-m.github.io/bulletpr/" target="_blank">Ver proyecto</a>
+      </div>
+      <div class="proyecto-card">
+        <h3>Ramos by Capote</h3>
+        <img src="assets/img/3.png" alt="Ramos by capote">
+        <a href="https://jahniss-m.github.io/ramos-by-capote/" target="_blank">Ver proyecto</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="redes" data-aos="flip-left">
+    <h2>Mis redes</h2>
+    <p>Sígueme y ve mi trabajo en tiempo real:</p>
+    <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
+      <li>
+        <a href="https://instagram.com/_ichayy__?igsh=MWNjbDZzeXNweDlybw==" target="_blank" style="color: #e1306c; font-size: 1.8rem;">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="faq" data-aos="fade-up" data-aos-duration="1200">
+    <h2>Preguntas Frecuentes</h2>
+    <p><strong>¿Cuánto tarda un proyecto?</strong><br>Entre 2 y 5 días según lo que necesites.</p>
+    <p><strong>¿Necesito saber programar?</strong><br>No. Tú solo me das la idea, yo me encargo del resto.</p>
+    <p><strong>¿Aceptas pagos en cripto?</strong><br>Sí, acepto pagos en criptomonedas, pero solo en <strong>stablecoins</strong> (como USDT, USDC o BUSD). También acepto PayPal y otras opciones si están disponibles.</p>
+  </section>
+
+  <section id="contacto" data-aos="zoom-in-up">
+    <h2>Contáctame</h2>
+    <form id="contact-form" action="https://jahniss-landing-backend.onrender.com/contact" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="content" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="form-status" style="text-align: center; margin-top: 10px;"></p>
+  </section>
+<!--
+  <section id="donar" data-aos="fade-up" data-aos-delay="300">
+    <h2>¿Quieres apoyarme?</h2>
+    <p>Pronto podrás hacerlo con cripto, Momo o PayPal.</p>
+    <button disabled>Donar (Próximamente)</button>
+  </section>
+-->
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    status.textContent = '📤 Enviando mensaje...';
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData
+      });
+
+      if (response.ok) {
+        status.textContent = '✅ ¡Mensaje enviado con éxito!';
+        form.reset();
+      } else {
+        status.textContent = '❌ Error al enviar el mensaje.';
+      }
+    } catch (error) {
+      status.textContent = '⚠️ No se pudo conectar con el servidor.';
+    }
+  });
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Jahniss Dev</p>
+    <p><a href="#redes">Redes</a> | <a href="#contacto">Contacto</a> | <a href="#faq">FAQ</a></p>
+  </footer>
+
+</body>
+</html>

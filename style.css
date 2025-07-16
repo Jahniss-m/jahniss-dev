@@ -1,0 +1,151 @@
+:root {
+  --color-bg: #0f0f1c;
+  --color-text: #f2f2f2;
+  --color-accent: #00ffc3;
+  --color-secondary: #1f1f2e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #00ffc3, #0f0f1c);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #0f0f1c;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: var(--color-secondary);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,255,195,0.1);
+  transition: transform 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+ul {
+  list-style: square;
+  margin-left: 1.5rem;
+  color: #ccc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea, button {
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+input, textarea {
+  background: #2b2b3a;
+  color: white;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+}
+
+button {
+  background: var(--color-accent);
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #00e0b0;
+}
+
+button:disabled {
+  background: #555;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.proyecto-card {
+  background: #2b2b3a;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 195, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-5px);
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.proyecto-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--color-accent);
+}
+
+.proyecto-card a {
+  display: inline-block;
+  margin: 1rem 0 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--color-accent);
+  color: #0f0f1c;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.proyecto-card a:hover {
+  background: #00e0b0;
+}
